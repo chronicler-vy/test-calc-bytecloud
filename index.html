@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type = "text/css" href = "style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+    
+    <section class="main-screen">
+        <div class="calc-frame">
+            <div class="ranges-block">
+                <div class="range-block">
+                    <p id="storage-range-p">Storage: 0 GB</p>
+                    <input type="range" id="storage-range" name="storage" min="0" max="1000" value="0" step="1">
+                </div>
+                <div class="range-block">
+                    <p id="transfer-range-p">Transfer: 0 GB</p>
+                    <input type="range" id="transfer-range" name="transfer" min="0" max="1000" value="0" step="1">
+                </div>
+                
+            </div>
+
+            <div class="plot-frame">
+                <div class="plots-block">
+                    <div class="plot">
+                        <svg height="30">
+                            <rect id = "backblazeRect" width="100%" height="30" style="fill:rgb(95, 95, 95);" />
+                         </svg>
+    
+                         <p id="backblaze-cost-value">6$</p>
+                    </div>
+                   
+                    <div class="plot">
+                        <svg height="30">
+                            <rect id = "bunnyRect" width="100%" height="30" style="fill:rgb(95, 95, 95);" />
+                         </svg>
+                         <p id="bunny-cost-value">6$</p>
+                    </div>
+
+                    <div class="plot">
+                        <svg height="30">
+                            <rect id = "scalewayRect" width="100%" height="30" style="fill:rgb(95, 95, 95);" />
+                         </svg>
+                         <p id="scaleway-cost-value">6$</p>
+                    </div>
+                    <div class="plot">
+                        <svg height="30">
+                            <rect id = "vultrRect" width="100%" height="30" style="fill:rgb(95, 95, 95);" />
+                         </svg>
+                         <p id="vultr-cost-value">6$</p>
+                    </div>
+                </div>
+
+                <div class="plot-titles">
+                    <div class="plot-title-block">
+                        <img src="./src/backblaze.svg" alt="">
+                        <div class="plot-radio">
+                            <p class="plot-title">Backblaze</p>
+                        </div>
+                        
+                        
+                    </div>    
+    
+        
+                    <div class="plot-title-block">
+                        <img src="./src/bunny.svg" alt="">
+                        <div class="plot-radio">
+                            <p class="plot-title">Bunny</p>
+                            <input type="radio" id="bunnyRadio_H" name="bunny_type" value="HDD" checked="checked" onchange="setCost()">
+                            <label for="bunnyRadio_H">HDD</label>
+                            <input type="radio" id="bunnyRadio_S" name="bunny_type" value="SSD" onchange="setCost()">
+                            <label for="bunnyRadio_S">SSD</label>
+                        </div>
+                       
+                    </div>
+    
+                    <div class="plot-title-block">
+                        <img src="./src/scaleway.svg" alt="">
+                        <div class="plot-radio">
+                            <p class="plot-title">Scaleway</p>
+                            <input type="radio" id="scalewayRadio_M" name="scaleway_type" value="Multi" checked="checked" onchange="setCost()">
+                            <label for="scalewayRadio_M">Multi</label>
+                            <input type="radio" id="scalewayRadio_S" name="scaleway_type" value="Single" onchange="setCost()">
+                            <label for="scalewayRadio_S">Single</label>
+                        </div>
+                        
+                    </div>  
+    
+                    <div class="plot-title-block">
+                        <img src="./src/vultr.svg" alt="">
+                        <div class="plot-radio">
+                            <p class="plot-title">Vultr</p>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                
+            </div>
+            
+
+        </div>
+    </section>
+<script src="index.js"></script>
+
+</body>
+</html>
